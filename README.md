@@ -1,16 +1,21 @@
-# CompraSite_automationPractice
+## Compra pelo Site automationPractice
+
 Projeto desenvolvido para testes de compra no site: http://www.automationpractice.com/
 
-O projeto possui as seguintes funcionalidades:
-- Seleciona um item para o carrinho
-- Verifica se o item do carrinho é mesmo selecionado na pagina home
-- Cria uma conta para o usuário
-- Confirma dados de entrega e forma de pagamento
-- Verifica o valor total da compra
-- Emite uma ordem de compra e verifica se a ordem foi emitida com sucesso.
+**O projeto possui as seguintes funcionalidades:**
+- [x] Seleciona um item para o carrinho
+- [x] Verifica se o item do carrinho é mesmo selecionado na pagina home
+- [x] Cria uma conta para o usuário
+- [x] Confirma dados de entrega e forma de pagamento
+- [x] Verifica o valor total da compra
+- [x] Emite uma ordem de compra e verifica se a ordem foi emitida com sucesso.
+
+### Estrutura do projeto:
+- Desenvolvido no padrão page object
+- Possui relatório em formato html, com evidência dos testes em anexo (imagens)
 
 
-Configurando o ambiente:
+### Configurando o ambiente:
 Antes de rodar os testes, por favor instale:
 
 1 - [ruby] - Instalando ruby
@@ -28,7 +33,7 @@ Antes de rodar os testes, por favor instale:
 	Windows:
    		C:/Windows
 
-Executando os testes:
+**Executando os testes:**
 
 3 - [Rodando os testes]
 - No terminal, na pasta do projeto, execute o seguinte comando que irá instalar as Gems do projeto:
