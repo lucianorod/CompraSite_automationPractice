@@ -6,7 +6,7 @@ O projeto possui as seguintes funcionalidades:
 - Verifica se o item do carrinho é mesmo selecionado na pagina home
 - Cria uma conta para o usuário
 - Confirma dados de entrega e forma de pagamento
-- Verifica o valor tota da compra
+- Verifica o valor total da compra
 - Emite uma ordem de compra e verifica se a ordem foi emitida com sucesso.
 
 
