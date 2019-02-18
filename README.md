@@ -12,7 +12,7 @@ Projeto desenvolvido para testes de compra no site: http://www.automationpractic
 
 ### Estrutura do projeto:
 - Desenvolvido no padrão page object
-- Possui relatório em formato html, com evidência dos testes em anexo (imagens)
+- Possui relatório em formato html, com evidência dos testes em anexo (imagens) - Pasta reports
 
 
 ### Configurando o ambiente:
