@@ -15,7 +15,7 @@ if @browser.eql?('headless')
         'chromeOptions' => {'args' => ['--no-default-browser-check']}
     )
 
-    Capybara.register_driver :selenium do |app|
+    Capybara.register_driver :chrome do |app|
         Capybara::Selenium::Driver.new(
             app,
             browser: :remote,
