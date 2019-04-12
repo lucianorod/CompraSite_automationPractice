@@ -19,7 +19,7 @@ if @browser.eql?('headless')
         Capybara::Selenium::Driver.new(
             app,
             browser: :remote,
-            url: 'http://alguma_coisa:4444/wd/hub',
+            url: 'http://selenium:4444/wd/hub',
             desired_capabilities: caps
         )
     end
