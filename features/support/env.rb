@@ -12,10 +12,10 @@ if @browser.eql?('headless')
     Capybara.run_server = false
 
     caps = Selenium::WebDriver::Remote::Capabilities.chrome(
-        'chromeOptions' => {'args' => ['--no-default-browser-check']}
+        'goog:chromeOptions' => {'args' => ['--no-default-browser-check']}
     )
 
-    Capybara.register_driver :chrome do |app|
+    Capybara.register_driver :selenium do |app|
         Capybara::Selenium::Driver.new(
             app,
             browser: :remote,
