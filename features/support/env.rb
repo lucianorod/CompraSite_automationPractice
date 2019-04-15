@@ -20,7 +20,7 @@ if @browser.eql?('headless')
             app,
             :browser => :remote,
             :url => "http://selenium:4444/wd/hub",
-            :driver_path => "/usr/bin/",
+            :driver_path => "/opt/selenium/chromedriver-73.0.3683.68",
             :desired_capabilities => caps
         )
     end
