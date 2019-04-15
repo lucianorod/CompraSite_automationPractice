@@ -12,14 +12,14 @@ if @browser.eql?('headless')
     Capybara.run_server = false
 
     caps = Selenium::WebDriver::Remote::Capabilities.chrome(
-        'goog:chromeOptions' => {'args' => ['--no-default-browser-check']}
+        'chromeOptions' => {'args' => ['--no-default-browser-check']}
     )
 
     Capybara.register_driver :selenium do |app|
         Capybara::Selenium::Driver.new(
             app,
             browser: :remote,
-            url: 'http://selenium:4444/wd/hub',
+            url: 'http://localhost:4444/wd/hub',
             desired_capabilities: caps
         )
     end
