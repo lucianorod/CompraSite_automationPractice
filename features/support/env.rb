@@ -20,7 +20,7 @@ if @browser.eql?('headless')
             app,
             browser: :remote,
             url: 'http://selenium:4444/wd/hub',
-#             desired_capabilities: caps
+            desired_capabilities: caps
         )
     end
 else
