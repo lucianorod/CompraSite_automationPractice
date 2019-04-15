@@ -18,10 +18,9 @@ if @browser.eql?('headless')
     Capybara.register_driver :selenium do |app|
         Capybara::Selenium::Driver.new(
             app,
-            :browser => :remote,
-            :url => "http://selenium:4444/wd/hub",
-            :driver_path => "/opt/selenium/chromedriver-73.0.3683.68",
-            :desired_capabilities => caps
+            browser: :remote,
+            url: 'http://selenium:4444/wd/hub',
+#             desired_capabilities: caps
         )
     end
 else
