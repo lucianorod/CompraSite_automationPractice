@@ -20,11 +20,11 @@ pipeline{
                     agent { 
                         docker {
                             image 'ruby'
-                            args '--link selenium'
+                            # args '--link selenium'
                         }
                     } 
                     steps {
-                        echo 'Run Selenium'
+                        echo 'Run Ruby'
                     }
                 }
             }                
