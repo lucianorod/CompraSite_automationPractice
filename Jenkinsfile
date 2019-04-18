@@ -1,18 +1,33 @@
 pipeline{
-    agent{        
-        docker{
-            image 'ruby'
-        }
-    }
+    agent none
     environment{
         CI = true
     }
-    stages{
-        stage('Selenium') {
-            agent { docker 'selenium/standalone-chrome-debug' } 
-            steps {
-                sh '--link ruby'
-            }
+    stages{        
+        stage('Images Selenium and Ruby') {
+            parallel {
+                stage('Selenium'){            
+                    agent { 
+                        docker {
+                            image 'selenium/standalone-chrome-debug'
+                        } 
+                    } 
+                    steps {
+                        echo 'Run Selenium'
+                    }
+                }
+                stage('Ruby'){            
+                    agent { 
+                        docker {
+                            image 'ruby'
+                            args '--link selenium'
+                        }
+                    } 
+                    steps {
+                        echo 'Run Selenium'
+                    }
+                }
+            }                
         }
         stage('Bundle'){
             steps{
