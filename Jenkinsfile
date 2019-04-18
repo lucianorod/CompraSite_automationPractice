@@ -2,10 +2,6 @@ pipeline{
     agent{        
         docker{
             image 'selenium/standalone-chrome-debug'
-        }
-    }
-     agent{        
-        docker{
             image 'ruby'
             args '--link selenium'
         }
