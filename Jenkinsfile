@@ -8,8 +8,11 @@ pipeline{
             agent{        
                 docker{
                     image 'selenium/standalone-chrome-debug'
-                }
-            }           
+                }                
+            }
+            steps {
+                sh 'selenium --version'
+            }
         }
         stage('Ruby'){
             agent{        
