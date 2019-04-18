@@ -21,6 +21,9 @@ pipeline{
                     args '--link selenium'
                 }
             }
+            steps {
+                sh 'ruby --version'
+            }
         }
         stage('Bundle'){
             steps{
