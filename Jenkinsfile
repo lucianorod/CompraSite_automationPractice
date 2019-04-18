@@ -9,10 +9,7 @@ pipeline{
                 docker{
                     image 'selenium/standalone-chrome-debug'
                 }
-            }
-            steps {
-                sh 'docker run -d -p 4444:4444 -p 59000:59000 --name selenium'
-            }
+            }           
         }
         stage('Ruby'){
             agent{        
@@ -20,9 +17,6 @@ pipeline{
                     image 'ruby'
                     args '--link selenium'
                 }
-            }
-            steps {
-                sh 'ruby --version'
             }
         }
         stage('Bundle'){
