@@ -5,6 +5,9 @@ pipeline {
             agent {
                 docker { image 'selenium/standalone-chrome-debug' }
             }
+            steps {
+                
+            }
         }
         stage('Front-end') {
             agent {
