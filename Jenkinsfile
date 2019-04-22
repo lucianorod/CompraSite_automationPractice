@@ -1,12 +1,28 @@
 pipeline{
-    agent any
+    agent{
+        docker{
+            image 'ruby'
+            args '--link selenium'
+        } 
+    }
     environment{
         CI = true
     }
-    stages{
-        stage('Ruby and Selenium'){
+    stages{        
+        stage('Bundle'){
             steps{
-                sh "docker-compose -f docker-compose.yml up"
+                sh "bundle install"
+            }
+        }
+        stage('Run Features'){
+            steps{
+                script{
+                    try{
+                        sh "bundle exec cucumber -p ci"
+                    } finally {
+                        cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'reports', sortingMethod: 'ALPHABETICAL'
+                    }
+                }                
             }
         }
     }
