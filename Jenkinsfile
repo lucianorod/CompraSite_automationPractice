@@ -6,7 +6,7 @@ pipeline {
                 docker { image 'selenium/standalone-chrome-debug' }
             }
             steps {
-                
+                sh 'print i'
             }
         }
         stage('Front-end') {
