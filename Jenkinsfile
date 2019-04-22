@@ -12,5 +12,17 @@ pipeline {
                 sh 'echo success'
             }
         }
+        stage('Ruby') {
+            agent {
+                docker {
+                    image 'ruby'
+                    args '--link selenium'
+                }
+            }
+            steps {
+                sh 'bundle install'
+                sh 'bundle exec cucumber -p ci'
+            }
+        }
     }
 }
