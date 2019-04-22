@@ -1,17 +1,17 @@
 pipeline{
-    agent{
-        docker{ image 'ruby' } 
-    }
+    agent { dockerfile true }
     environment{
         CI = true
     }
     stages{
-        stage('Selenium'){
+        stage('Ruby'){
             agent {
-                docker { image 'selenium/standalone-chrome-debug' }
+                docker { 
+                    image 'ruby'
+                }
             }
             steps{
-                sh "docker run -d -p 4444:4444 -p 59000:59000 --name selenium selenium/standalone-chrome-debug"
+                sh "ruby -v"
             }
         }
         stage('Bundle'){
