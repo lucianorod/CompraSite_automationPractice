@@ -2,13 +2,17 @@ pipeline{
     agent{
         docker{
             image 'ruby'
-            args '--link selenium'
         } 
     }
     environment{
         CI = true
     }
     stages{
+        stage('Selenium'){
+            steps{
+                sh "docker run -d -p 4444:4444 -p 59000:59000 --name selenium selenium/standalone-chrome-debug"
+            }
+        }
         stage('Bundle'){
             steps{
                 sh "bundle install"
@@ -23,6 +27,11 @@ pipeline{
                         cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'reports', sortingMethod: 'ALPHABETICAL'
                     }
                 }                
+            }
+        }
+        stage('Down Selenium'){
+            steps{
+                sh "docker rm -vf selenium"
             }
         }
     }
