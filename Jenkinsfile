@@ -3,10 +3,7 @@ pipeline {
     stages {
         stage('Back-end') {
             agent {
-                docker { image 'maven:3-alpine' }
-            }
-            steps {
-                sh 'mvn --version'
+                docker { image 'selenium/standalone-chrome-debug' }
             }
         }
         stage('Front-end') {
