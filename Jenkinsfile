@@ -1,5 +1,4 @@
 node {
-    agent none
     stages {
         stage('selenium') {
             agent {
