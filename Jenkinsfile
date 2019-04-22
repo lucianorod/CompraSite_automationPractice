@@ -1,6 +1,6 @@
-pipeline{
+pipeline {
     agent none
-    stages{
+    stages {
         stage('selenium') {
             agent {
                 docker { 
