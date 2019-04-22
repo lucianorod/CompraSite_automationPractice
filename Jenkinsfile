@@ -1,12 +1,20 @@
 pipeline {
     agent none
     stages {
-        stage('Selenium') {
+        stage('Back-end') {
             agent {
-                docker { 
-                    image 'selenium/standalone-chrome-debug'
-                    args '-d -p 4444:4444 -p 59000:59000 --name selenium'
-                }
+                docker { image 'maven:3-alpine' }
+            }
+            steps {
+                sh 'mvn --version'
+            }
+        }
+        stage('Front-end') {
+            agent {
+                docker { image 'node:7-alpine' }
+            }
+            steps {
+                sh 'node --version'
             }
         }
     }
