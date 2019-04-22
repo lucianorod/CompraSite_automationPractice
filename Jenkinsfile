@@ -1,7 +1,7 @@
 pipeline {
     agent none
     stages {
-        stage('selenium') {
+        stage('Selenium') {
             agent {
                 docker { 
                     image 'selenium/standalone-chrome-debug'
